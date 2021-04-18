@@ -1,1 +1,6 @@
-node bin/brain-games.js
+run:
+	bin/brain-games.js
+
+lint:
+	npx eslint .
+
