@@ -34,14 +34,14 @@ const questLoop = () => {
         ans = readlineSync.question('Your answer: ');
         checkAns(ans, boolA);
     }
-    console.log("dfd=========================> " +i);
+    //console.log("dfd=========================> " +i);
     if (i >= 2){
         console.log("Congratulations, " + name);
     }
 }
 
 const checkAns = (str, boolA) => {
-    console.log("22222222222222str = " + str + " boolA = " + boolA);
+    //console.log("22222222222222str = " + str + " boolA = " + boolA);
     let boolB;
     let error = false;
     if (str === "yes") {
@@ -94,7 +94,7 @@ const calc = (a) => {
     }
 }
 
-function getRandomInt() {
+function getRandomInt() { //спизжено
     let forRandom
     if (name.length > 1) {
         forRandom = name.length ** 10;
@@ -107,5 +107,5 @@ function getRandomInt() {
 
 
 
-brainEven();
+//brainEven();
 export default brainEven;
