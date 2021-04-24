@@ -34,6 +34,10 @@ const questLoop = () => {
         ans = readlineSync.question('Your answer: ');
         checkAns(ans, boolA);
     }
+    console.log("dfd=========================> " +i);
+    if (i >= 2){
+        console.log("Congratulations, " + name);
+    }
 }
 
 const checkAns = (str, boolA) => {

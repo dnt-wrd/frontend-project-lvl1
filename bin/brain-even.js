@@ -1,11 +1,6 @@
-import readlineSync from 'readline-sync';
+#!/usr/bin/env node
 
-const startGame = () => {
-    console.log("Welcome to the Brain Games!");
+//import readlineSync from 'readline-sync';
+import brainEven from '../games/game-brain-even.js';
 
-    const name = readlineSync.question('May I have your name? ');
-
-    console.log("Hello, " + name + "!");
-};
-
-startGame();
+brainEven();
