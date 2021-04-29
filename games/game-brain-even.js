@@ -2,6 +2,8 @@ import readlineSync from 'readline-sync';
 
 let name, i;
 let boolA, a, ans;
+let error = false;
+let errorAns = false;
 
 const brainEven = () => {
     console.log("Welcome to the Brain Games!");
@@ -35,15 +37,19 @@ const questLoop = () => {
         checkAns(ans, boolA);
     }
     //console.log("dfd=========================> " +i);
-    if (i >= 2){
+    if (i >= 2 & !error & !errorAns){
         console.log("Congratulations, " + name);
+    }
+
+    if (i >= 2 & errorAns){
+        console.log("Let's try again, " + name + "!");
     }
 }
 
 const checkAns = (str, boolA) => {
     //console.log("22222222222222str = " + str + " boolA = " + boolA);
     let boolB;
-    let error = false;
+
     if (str === "yes") {
         boolB = true;
         console.log("boolB= " + boolB);
@@ -58,25 +64,25 @@ const checkAns = (str, boolA) => {
         console.log("Correct!");
         i++;
     } else if (boolB & !error & !boolA){
-        console.log("'yes' is wrong answer ;(. Correct answer was 'no'.\n" +
-            "Let's try again, "+ name +"!");
-        i = 0;
+        console.log("'yes' is wrong answer ;(. Correct answer was 'no'.");
+        i = 3;
+        errorAns = true;
     }
     else if (!boolB & !error & !boolA){
         console.log("Correct!");
         i++;
     }
     else if (!boolB & !error & boolA){
-        console.log("'no' is wrong answer ;(. Correct answer was 'yes'.\n" +
-            "Let's try again, "+ name +"!");
-        i=0;
+        console.log("'no' is wrong answer ;(. Correct answer was 'yes'.");
+        i=3;
+        errorAns = true;
     }
     else if (error){
-        console.log("'no' is wrong answer ;(. Correct answer was 'yes'.\n" +
-            "Let's try again, "+ name +"!");
-        i=0;
+        console.log("'no' is wrong answer ;(. Correct answer was 'yes'.");
+        i=3;
+        errorAns = true;
     }
-    console.log(i);
+    //console.log(i);
 }
 
 const quest = (ans) => {
@@ -107,5 +113,5 @@ function getRandomInt() { //спизжено
 
 
 
-//brainEven();
+brainEven();
 export default brainEven;
