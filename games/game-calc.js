@@ -1,23 +1,29 @@
 import readlineSync from 'readline-sync';
-import  {getRandomInt, getName} from '../src/index.js';
+import  {getRandomInt, getName, wrongAns} from '../src/index.js';
+let i = 0;
+let errorCalc = false;
 
 const brainCalc = () => {
 
     let name = getName();
-    let a = getRandomInt();
-    let b = getRandomInt();
-    let c = randomOper();
-    checkCalc(calculator(a,b,c));
+    for (i; i < 3; i++) {
+        let boolTest = checkCalc(calculator());
+        if(boolTest){
+            break;
+        }
+    }
 }
-
 const randomOper = () => {
     let oper = ['+', "-", "*"];
-    let numberOper = getRandomInt(0,2);
+    let numberOper = getRandomInt(0,3);
     console.log(oper[numberOper]);
     return oper[numberOper];
 }
 
-const calculator = (a, b, c) => {
+const calculator = () => {
+    let a = getRandomInt();
+    let b = getRandomInt();
+    let c = randomOper();
     let answer;
     console.log("Question: " + a + " " + c + " " + b);
     switch (c) {
@@ -41,8 +47,11 @@ const checkCalc = (answerCalculator) => {
     if (answerCalculator == answerUser) {
         console.log("Correct!");
     } else {
-        console.log("ошибка");
+
+        wrongAns(answerCalculator, answerUser);
+        return errorCalc = true;
     }
+
 }
 
 
