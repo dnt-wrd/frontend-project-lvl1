@@ -6,11 +6,20 @@ function getRandomInt(min = 1, max = 10) {
     return Math.floor(Math.random() * (max - min)) + min; //Максимум не включается, минимум включается
 }
 
-const getName = () => {
+const getName = (nameGame) => {
     console.log("Welcome to the Brain Games!");
     const name = readlineSync.question('May I have your name? ');
         console.log("Hello, " + name + "!");
-        console.log("What is the result of the expression?");
+        switch (nameGame){
+            case "gcd":
+                console.log("Find the greatest common divisor of given numbers.");
+                break;
+            case "calc":
+                console.log("What is the result of the expression?");
+                break;
+        }
+
+        //console.log("What is the result of the expression?");
         return name;
 }
 
