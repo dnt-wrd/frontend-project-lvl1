@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-function getRandomInt(min = 1, max = 10) {
+function getRandomInt(min = 1, max = 30) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min; //Максимум не включается, минимум включается
@@ -23,16 +23,33 @@ const getName = (nameGame) => {
         return name;
 }
 
-const wrongAns = (cur, err) => {
-    console.log("\'" + err + "\' is wrong answer ;(. Correct answer was \'" + cur + "\'.")
+const wrongAns = (cur, err, name) => {
+    console.log("\'" + err + "\' is wrong answer ;(. Correct answer was \'" + cur + "\'.");
+    console.log("Let's try again, " + name + "!")
 }
 
 const countAndText = (i = 0, name) => {
-    if (i >= 3){
+    if (i > 3){
         console.log("Congratulations, " + name + "!");
     }
 
 }
 
-export {getRandomInt, getName, wrongAns};
+// для проверки ответа
+const checkAns = (correctAns, name) => {
+    let userAns = readlineSync.question('Your answer: ');
+    //console.log("answerUser ====> " + answerUser);
+    //console.log("answerCalculator ====> " + answerCalculator);
+    if (correctAns == userAns) {
+        console.log("Correct!");
+        return true;
+    } else {
+
+        wrongAns(correctAns, userAns, name);
+        return false;
+    }
+
+}
+
+export {getRandomInt, getName, wrongAns, checkAns, countAndText};
 
