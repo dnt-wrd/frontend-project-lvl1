@@ -20,6 +20,9 @@ const getName = (nameGame) => {
             case "progression":
                 console.log("What number is missing in the progression?");
                 break;
+            case "prime":
+                console.log("Answer \"yes\" if given number is prime. Otherwise answer \"no\".");
+                break;
         }
 
         //console.log("What is the result of the expression?");
