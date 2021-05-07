@@ -17,6 +17,9 @@ const getName = (nameGame) => {
             case "calc":
                 console.log("What is the result of the expression?");
                 break;
+            case "progression":
+                console.log("What number is missing in the progression?");
+                break;
         }
 
         //console.log("What is the result of the expression?");
@@ -35,21 +38,29 @@ const countAndText = (i = 0, name) => {
 
 }
 
+const newCountAndText = (name) => {
+        console.log("Congratulations, " + name + "!");
+
+
+}
+
 // для проверки ответа
 const checkAns = (correctAns, name) => {
+    //console.log(`правильный ответ==========>> ${correctAns}`);
     let userAns = readlineSync.question('Your answer: ');
+    let arr;
     //console.log("answerUser ====> " + answerUser);
     //console.log("answerCalculator ====> " + answerCalculator);
     if (correctAns == userAns) {
         console.log("Correct!");
         return true;
     } else {
-
         wrongAns(correctAns, userAns, name);
         return false;
     }
-
 }
 
-export {getRandomInt, getName, wrongAns, checkAns, countAndText};
+
+
+export {getRandomInt, getName, wrongAns, checkAns, countAndText, newCountAndText};
 
