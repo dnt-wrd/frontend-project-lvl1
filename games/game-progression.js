@@ -5,9 +5,7 @@ let gameName = 'progression';
 
 function brainProgression() {
     let name = getName(gameName);
-    //let res = createArray();
     let i = 0;
-    //let answerUser = readlineSync.question('Your answer: ');
     let checkLoop = true;
     while (checkLoop){
         let res = createArray();
@@ -25,8 +23,6 @@ function brainProgression() {
     if (i === 3){
         newCountAndText(name);
     }
-    //checkAns(res[1], name);
-
 }
 
 function createArray(){
@@ -47,7 +43,7 @@ function createArray(){
     arrReturn.push(arrElementForCheck);
     console.log(arr);
     return arrReturn;
-};
+}
 
 brainProgression();
 export default brainProgression;

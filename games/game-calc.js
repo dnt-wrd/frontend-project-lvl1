@@ -16,7 +16,6 @@ const brainCalc = () => {
 const randomOper = () => {
     let oper = ['+', "-", "*"];
     let numberOper = getRandomInt(0,3);
-    //console.log(oper[numberOper]);
     return oper[numberOper];
 }
 
@@ -42,22 +41,14 @@ const calculator = () => {
 
 const checkCalc = (answerCalculator) => {
     let answerUser = readlineSync.question('Your answer: ');
-    //console.log("answerUser ====> " + answerUser);
-    //console.log("answerCalculator ====> " + answerCalculator);
+
     if (answerCalculator == answerUser) {
         console.log("Correct!");
     } else {
-
         wrongAns(answerCalculator, answerUser);
         return errorCalc = true;
     }
-
 }
-
-
-
-
-
 
 brainCalc();
 export default brainCalc;

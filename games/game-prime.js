@@ -17,11 +17,10 @@ function brainPrime() {
         }
     }
 
-
     if (p === 3){
         newCountAndText(name);
     }
-};
+}
 
 function primeAndCheck(name){
     let a = getRandomInt(1, 100);
@@ -40,7 +39,6 @@ function primeAndCheck(name){
     if (a === 1) {
         isPrime = true;
     }
-    //return isPrime;
 
     if(isPrime) {
         text = "yes";
@@ -50,7 +48,7 @@ function primeAndCheck(name){
 
 
     return checkAns(text, name);
-};
+}
 
 brainPrime();
 export default brainPrime;

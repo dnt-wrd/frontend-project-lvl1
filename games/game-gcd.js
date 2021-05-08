@@ -5,8 +5,6 @@ const gameName = "calc";
 let a,b, q;
 function brainGSD () {
     let name = getName(gameName); //для комита
-    //console.log(getRandomInt());
-
 
     for (q = 1; q <=3; q++){
         a = getRandomInt();
@@ -26,7 +24,6 @@ function brainGSD () {
 }
 
 function gcd(a, b){
-
     let i = a;
     while (a % i !== 0 || b % i !== 0) {
         //console.log(a % i);
