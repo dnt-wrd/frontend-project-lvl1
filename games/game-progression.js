@@ -38,6 +38,7 @@ function createArray() {
     arr.push(startNumber);
     startNumber += shag;
   }
+  // eslint-disable-next-line prefer-const
   arrElementForCheck = arr[randomElement];
   arr[randomElement] = '..';
   arrReturn.push(arr);
@@ -46,5 +47,5 @@ function createArray() {
   return arrReturn;
 }
 
-brainProgression();
+// brainProgression();
 export default brainProgression;

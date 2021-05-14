@@ -100,5 +100,5 @@ function getRandomInt() { // спизжено
   return Math.floor(Math.random() * forRandom);
 }
 
-brainEven();
+// brainEven();
 export default brainEven;

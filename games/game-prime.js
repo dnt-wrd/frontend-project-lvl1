@@ -55,5 +55,5 @@ function brainPrime() {
   }
 }
 
-brainPrime();
+// brainPrime();
 export default brainPrime;

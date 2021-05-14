@@ -33,5 +33,5 @@ function gcd(a, b) {
   return i;
 }
 
-brainGSD();
+// brainGSD();
 export default brainGSD;

@@ -50,5 +50,5 @@ const checkCalc = (answerCalculator) => {
   }
 };
 
-brainCalc();
+// brainCalc();
 export default brainCalc;
