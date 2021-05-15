@@ -1,9 +1,10 @@
 import readlineSync from 'readline-sync';
 
-function getRandomInt(min = 1, max = 30) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min; // Максимум не включается, минимум включается
+function getRandomInt(minInput = 1, maxInpit = 30) {
+  const min = Math.ceil(minInput);
+  const max = Math.floor(maxInpit);
+  // Максимум не включается, минимум включается
+  return Math.floor(Math.random() * (max - min)) + min;
 }
 
 const getName = (nameGame) => {
@@ -23,6 +24,8 @@ const getName = (nameGame) => {
     case 'prime':
       console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
       break;
+    default:
+      console.log('Игра не найдена');
   }
 
   // console.log("What is the result of the expression?");
@@ -48,10 +51,10 @@ const newCountAndText = (name) => {
 const checkAns = (correctAns, name) => {
   // console.log(`правильный ответ==========>> ${correctAns}`);
   const userAns = readlineSync.question('Your answer: ');
-  let arr;
+  // let arr;
   // console.log("answerUser ====> " + answerUser);
   // console.log("answerCalculator ====> " + answerCalculator);
-  if (correctAns == userAns) {
+  if (correctAns === Number(userAns)) {
     console.log('Correct!');
     return true;
   }
