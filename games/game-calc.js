@@ -1,9 +1,18 @@
 import readlineSync from 'readline-sync';
-import { getRandomInt, getName, wrongAns } from '../src/index.js';
+import {
+  getRandomInt, getName, wrongAns, checkAns, newCountAndText,
+} from '../src/index.js';
+
 const gameName = 'calc';
 
 let i = 0;
 let errorCalc = false;
+
+const randomOper = () => {
+  const oper = ['+', '-', '*'];
+  const numberOper = getRandomInt(0, 3);
+  return oper[numberOper];
+};
 
 const calculator = () => {
   const a = getRandomInt();
@@ -21,35 +30,44 @@ const calculator = () => {
     case '*':
       answer = a * b;
       break;
+    default:
+      answer = a + b;
   }
   return answer;
 };
 
-const checkCalc = (answerCalculator) => {
+// eslint-disable-next-line consistent-return
+/* const checkCalc = (answerCalculator) => {
   const answerUser = readlineSync.question('Your answer: ');
 
   if (answerCalculator === Number(answerUser)) {
     console.log('Correct!');
   } else {
     wrongAns(answerCalculator, answerUser);
-    return errorCalc = true;
+    errorCalc = true;
+    return errorCalc;
   }
-};
+}; */
 
 const brainCalc = () => {
   const name = getName(gameName);
-  for (i; i < 3; i+=1) {
-    const boolTest = checkCalc(calculator());
-    if (boolTest) {
-      break;
+  i = 0;
+  let checkLoop = true;
+
+  while (checkLoop) {
+    const checkLoopArray = checkAns(calculator(), name);
+    checkLoop = checkLoopArray;
+    if (checkLoop) {
+      i += 1;
+    }
+    if (i === 3) {
+      checkLoop = false;
     }
   }
-};
-const randomOper = () => {
-  const oper = ['+', '-', '*'];
-  const numberOper = getRandomInt(0, 3);
-  return oper[numberOper];
+  if (i === 3) {
+    newCountAndText(name);
+  }
 };
 
-brainCalc();
+// brainCalc();
 export default brainCalc;
