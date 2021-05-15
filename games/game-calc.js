@@ -1,12 +1,11 @@
-import readlineSync from 'readline-sync';
 import {
-  getRandomInt, getName, wrongAns, checkAns, newCountAndText,
+  getRandomInt, getName, checkAns, newCountAndText,
 } from '../src/index.js';
 
 const gameName = 'calc';
 
 let i = 0;
-let errorCalc = false;
+// let errorCalc = false;
 
 const randomOper = () => {
   const oper = ['+', '-', '*'];

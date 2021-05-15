@@ -7,9 +7,9 @@ let a;
 let b;
 // let q;
 
-function gcd(a, b) {
-  let i = a;
-  while (a % i !== 0 || b % i !== 0) {
+function gcd(a1, b1) {
+  let i = a1;
+  while (a1 % i !== 0 || b1 % i !== 0) {
     // console.log(a % i);
     i -= 1;
   }
