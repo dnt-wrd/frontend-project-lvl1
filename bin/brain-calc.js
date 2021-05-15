@@ -1,4 +1,4 @@
-#!/usr/bin/env node;
+#!/usr/bin/env node
 
 // import readlineSync from 'readline-sync';
 // eslint-disable-next-line import/extensions
