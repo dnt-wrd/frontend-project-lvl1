@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
 import { getRandomInt, getName, wrongAns } from '../src/index.js';
+const gameName = 'calc';
 
 let i = 0;
 let errorCalc = false;
@@ -36,7 +37,7 @@ const checkCalc = (answerCalculator) => {
 };
 
 const brainCalc = () => {
-  const name = getName(calc);
+  const name = getName(gameName);
   for (i; i < 3; i+=1) {
     const boolTest = checkCalc(calculator());
     if (boolTest) {
