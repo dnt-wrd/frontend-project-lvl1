@@ -47,5 +47,5 @@ function createArray() {
   return arrReturn;
 }
 
-// brainProgression();
+// brainProgression(); //для коммита
 export default brainProgression;
