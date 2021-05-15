@@ -20,7 +20,6 @@ function brainProgression() {
       checkLoop = false;
     }
   }
-
   if (i === 3) {
     newCountAndText(name);
   }

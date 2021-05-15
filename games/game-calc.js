@@ -4,21 +4,6 @@ import { getRandomInt, getName, wrongAns } from '../src/index.js';
 let i = 0;
 let errorCalc = false;
 
-const brainCalc = () => {
-  const name = getName();
-  for (i; i < 3; i++) {
-    const boolTest = checkCalc(calculator());
-    if (boolTest) {
-      break;
-    }
-  }
-};
-const randomOper = () => {
-  const oper = ['+', '-', '*'];
-  const numberOper = getRandomInt(0, 3);
-  return oper[numberOper];
-};
-
 const calculator = () => {
   const a = getRandomInt();
   const b = getRandomInt();
@@ -42,7 +27,7 @@ const calculator = () => {
 const checkCalc = (answerCalculator) => {
   const answerUser = readlineSync.question('Your answer: ');
 
-  if (answerCalculator == answerUser) {
+  if (answerCalculator === Number(answerUser)) {
     console.log('Correct!');
   } else {
     wrongAns(answerCalculator, answerUser);
@@ -50,5 +35,20 @@ const checkCalc = (answerCalculator) => {
   }
 };
 
-// brainCalc();
+const brainCalc = () => {
+  const name = getName(calc);
+  for (i; i < 3; i+=1) {
+    const boolTest = checkCalc(calculator());
+    if (boolTest) {
+      break;
+    }
+  }
+};
+const randomOper = () => {
+  const oper = ['+', '-', '*'];
+  const numberOper = getRandomInt(0, 3);
+  return oper[numberOper];
+};
+
+brainCalc();
 export default brainCalc;
