@@ -50,11 +50,16 @@ const newCountAndText = (name) => {
 // для проверки ответа
 const checkAns = (correctAns, name) => {
   // console.log(`правильный ответ==========>> ${correctAns}`);
-  const userAns = readlineSync.question('Your answer: ');
+  let userAns = readlineSync.question('Your answer: ');
   // let arr;
   // console.log("answerUser ====> " + answerUser);
   // console.log("answerCalculator ====> " + answerCalculator);
-  if (correctAns === Number(userAns)) {
+  const checkType = typeof userAns;
+  const numberForCheck = 'number';
+  if (checkType === numberForCheck){
+    userAns = Number(userAns);
+  }
+  if (correctAns === userAns) {
     console.log('Correct!');
     return true;
   }
