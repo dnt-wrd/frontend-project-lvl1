@@ -56,7 +56,7 @@ const checkAns = (correctAns, name) => {
   // console.log("answerCalculator ====> " + answerCalculator);
   const checkType = typeof userAns;
   const numberForCheck = 'number';
-  if (checkType === numberForCheck){
+  if (checkType === numberForCheck) {
     userAns = Number(userAns);
   }
   if (correctAns === userAns) {
