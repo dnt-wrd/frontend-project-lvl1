@@ -6,3 +6,4 @@
 [![hexlet-check](https://github.com/dnt-wrd/frontend-project-lvl1/actions/workflows/hexlet-check.yml/badge.svg?branch=main)](https://github.com/dnt-wrd/frontend-project-lvl1/actions/workflows/hexlet-check.yml)
 
 ![alt text](done.png "done")
+https://github.com/dnt-wrd/frontend-project-lvl1/runs/2595724069?check_suite_focus=true
